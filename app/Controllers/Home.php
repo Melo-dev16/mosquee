@@ -6,6 +6,10 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        $ev = $this->event->findAll();
+
+        foreach ($ev as $e) {
+            echo "Event N°$e->id: $e->image<br>";
+        }
     }
 }
